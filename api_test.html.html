@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JSON Test</title>
+</head>
+<body>
+
+    <div id="myData"> JSON will be appended here</div>
+    <script>
+
+        fetch('https://ipinfo.io/json')
+.then(function (response){
+    return response.json();
+})
+
+.then(function (data) {
+    appendData(data);
+});
+
+ function appendData(data) {
+            var mainContainer = document.getElementById("myData");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                 div.innerHTML =  data[i].ip + data[i].city + data[i].region;
+                mainContainer.appendChild(div);
+            }
+</script>
+</body>
+</html>
