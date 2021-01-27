@@ -1,0 +1,17 @@
+var someJSONData = {
+  "ip": "40.162.09.244",
+  "city": "Mentone",
+  "region": "California",
+  "country": "US",
+  "loc": "34.0700,-117.1345",
+  "org": "AS5650 Frontier Communications of America, Inc.",
+  "postal": "92359",
+  "timezone": "America/Los_Angeles",
+  "readme": "https://ipinfo.io/missingauth"
+}
+
+var Stringified = JSON.stringify(someJSONData);
+console.log(Stringified);
+
+var Parsed = JSON.parse(Stringified);
+console.log(Parsed);
